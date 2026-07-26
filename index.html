@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atmosphere — Real-Time Weather Experience</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="theme-clear">
+
+  <!-- Dynamic Animated Background Shapes -->
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+
+  <div class="page-container">
+
+    <!-- Top Navigation Header -->
+    <header class="navbar">
+      <div class="logo">
+        <span class="logo-icon">✨</span>
+        <h2>Atmosphere</h2>
+      </div>
+      <div class="search-wrapper">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="cityInput" placeholder="Search city or location..." autocomplete="off" />
+        <button id="locationBtn" title="Detect Current Location">
+          <i class="fa-solid fa-location-arrow"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero / Headline Section -->
+    <section class="hero-header">
+      <div class="badge">LIVE WEATHER HUB</div>
+      <h1>Right Now in <span id="cityNameDisplay">London</span></h1>
+      <p id="weatherTagline">Stay ahead of the weather with real-time conditions & forecast.</p>
+    </section>
+
+    <!-- Error Alert Box -->
+    <div id="errorBanner" class="error-banner hidden">
+      <i class="fa-solid fa-circle-exclamation"></i>
+      <span id="errorMsg">Could not find city. Please check spelling!</span>
+    </div>
+
+    <!-- Main Dashboard Grid -->
+    <main class="dashboard-grid">
+
+      <!-- Main Highlight Weather Card -->
+      <div class="card main-weather-card">
+        <div class="card-header">
+          <span class="sticker" id="weatherEmoji">☀️</span>
+          <span class="status-pill" id="weatherDesc">Clear Sky</span>
+        </div>
+
+        <div class="temp-container">
+          <h1 id="tempDisplay">24</h1>
+          <span class="unit">°C</span>
+        </div>
+
+        <div class="high-low">
+          <span>H: <strong id="highTemp">26°C</strong></span>
+          <span>L: <strong id="lowTemp">18°C</strong></span>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Grid (4 Stickers Cards) -->
+      <div class="metrics-wrapper">
+
+        <div class="card metric-card">
+          <div class="sticker-badge blue">💧</div>
+          <div class="metric-info">
+            <span>Humidity</span>
+            <h3 id="humidityDisplay">64%</h3>
+            <small id="humiditySub">Optimal level</small>
+          </div>
+        </div>
+
+        <div class="card metric-card">
+          <div class="sticker-badge cyan">💨</div>
+          <div class="metric-info">
+            <span>Wind Speed</span>
+            <h3 id="windDisplay">12 km/h</h3>
+            <small id="windSub">Gentle Breeze</small>
+          </div>
+        </div>
+
+        <div class="card metric-card">
+          <div class="sticker-badge purple">🌡️</div>
+          <div class="metric-info">
+            <span>Feels Like</span>
+            <h3 id="feelsLikeDisplay">25°C</h3>
+            <small>Similar to actual</small>
+          </div>
+        </div>
+
+        <div class="card metric-card">
+          <div class="sticker-badge orange">☀️</div>
+          <div class="metric-info">
+            <span>UV Index</span>
+            <h3 id="uvDisplay">5 Moderate</h3>
+            <small>Sun protection recommended</small>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- Upcoming Forecast Cards Section -->
+    <section class="forecast-section">
+      <h3>5-Day Forecast</h3>
+      <div class="forecast-grid" id="forecastGrid">
+        <!-- Injected via JavaScript -->
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
